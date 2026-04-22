@@ -121,7 +121,7 @@ export default function AiSeoPage() {
 
           <div className="grid gap-10 md:grid-cols-12 md:items-end">
             <div className="md:col-span-8">
-              <h1 className="display-xl max-w-[14ch] text-white">
+              <h1 className="hero-headline display-xl text-white">
                 <SplitLine>Be cited.</SplitLine>
                 <SplitLine delay={0.08}>
                   <span className="italic font-light text-neutral-500">Not skipped.</span>

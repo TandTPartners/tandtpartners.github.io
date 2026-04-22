@@ -13,7 +13,7 @@ export default function MetaBar({ index, label, right }: MetaBarProps) {
         <span>{label}</span>
       </div>
       {right && (
-        <span className="mono text-[10px] uppercase tracking-[0.2em] text-neutral-600">{right}</span>
+        <span className="mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">{right}</span>
       )}
     </div>
   )

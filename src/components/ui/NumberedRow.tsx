@@ -33,7 +33,7 @@ export default function NumberedRowList({ items }: NumberedRowListProps) {
               {item.text}
             </p>
             {item.meta && (
-              <span className="mono mt-3 block text-[10px] uppercase tracking-[0.2em] text-neutral-600 md:col-span-1 md:mt-0 md:text-right">
+              <span className="mono mt-3 block text-[10px] uppercase tracking-[0.2em] text-neutral-500 md:col-span-1 md:mt-0 md:text-right">
                 {item.meta}
               </span>
             )}

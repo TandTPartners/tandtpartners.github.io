@@ -8,9 +8,9 @@
   --bg: #0a0a0a;
   --surface: #111111;
   --fg: #ededed;
-  --muted: #8a8a8a;
-  --faint: #404040;
-  --line: rgba(255, 255, 255, 0.08);
+  --muted: #b0b0b0;
+  --faint: #6a6a6a;
+  --line: rgba(255, 255, 255, 0.12);
   --accent: #ff4a1c;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
@@ -55,11 +55,32 @@ body {
     font-feature-settings: 'liga' 0;
   }
 
+  /*
+   * Hero headline auto-fit using container queries.
+   * The nearest .container-swiss ancestor (always full page-content
+   * width) becomes the container, so every hero uses the same sizing
+   * basis regardless of which grid column the <h1> lives in.
+   * Combined with whitespace-nowrap on each SplitLine, this
+   * guarantees every hero headline is exactly 2 lines and the font
+   * auto-shrinks to fit.
+   */
+  .container-swiss:has(.hero-headline) {
+    container-type: inline-size;
+    container-name: hero;
+  }
+
   .display-xl {
-    font-size: clamp(3rem, 9.5vw, 10.5rem);
-    line-height: 0.92;
-    letter-spacing: -0.04em;
+    font-size: clamp(1.75rem, 8cqi, 9.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
     font-weight: 500;
+  }
+
+  /* Fallback for browsers without :has() or container query support */
+  @supports not (selector(*:has(> *))) {
+    .display-xl {
+      font-size: clamp(1.75rem, 7.5vw, 9.5rem);
+    }
   }
 
   .display-lg {

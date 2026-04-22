@@ -46,7 +46,7 @@ export default function ContactPage() {
               Response within 1 business day
             </span>
           </div>
-          <h1 className="display-xl max-w-[16ch] text-white">
+          <h1 className="hero-headline display-xl text-white">
             <SplitLine>Tell us</SplitLine>
             <SplitLine delay={0.08}>
               <span className="italic font-light text-neutral-500">what you </span>

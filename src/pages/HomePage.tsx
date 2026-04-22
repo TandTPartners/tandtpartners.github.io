@@ -77,7 +77,7 @@ export default function HomePage() {
           </div>
 
           <motion.div style={{ y: heroY, opacity: heroOpacity }}>
-            <h1 className="display-xl max-w-[14ch] text-white">
+            <h1 className="hero-headline display-xl text-white">
               <SplitLine>Digital systems,</SplitLine>
               <SplitLine delay={0.08}>
                 <span className="italic font-light text-neutral-500">built with </span>

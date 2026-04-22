@@ -37,7 +37,7 @@ export default function Footer() {
                     className="group flex items-center justify-between text-neutral-400 transition-colors hover:text-white"
                   >
                     <span className="flex items-baseline gap-3">
-                      <span className="mono text-[10px] text-neutral-600">{item.num}</span>
+                      <span className="mono text-[10px] text-neutral-500">{item.num}</span>
                       <span className="text-sm">{item.label}</span>
                     </span>
                     <ArrowUpRight size={14} className="opacity-0 transition-opacity group-hover:opacity-100" />
@@ -52,7 +52,7 @@ export default function Footer() {
             <ul className="mt-6 space-y-3 text-sm text-neutral-400">
               <li>tahir@tandtpartners.com</li>
               <li>New York, USA</li>
-              <li className="mono text-xs uppercase text-neutral-600">
+              <li className="mono text-xs uppercase text-neutral-500">
                 Est. 2024
               </li>
             </ul>

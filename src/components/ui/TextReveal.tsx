@@ -58,7 +58,9 @@ interface SplitLineProps {
 
 /**
  * Single-line clip-path reveal. Animates immediately on mount
- * (intended for above-the-fold hero text).
+ * (intended for above-the-fold hero text). Content is kept on a single
+ * line via `whitespace-nowrap` so each SplitLine always occupies exactly
+ * one line.
  */
 export function SplitLine({ children, className, delay = 0 }: SplitLineProps) {
   return (
@@ -67,7 +69,7 @@ export function SplitLine({ children, className, delay = 0 }: SplitLineProps) {
         initial={{ y: '110%' }}
         animate={{ y: '0%' }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay }}
-        className="block"
+        className="block whitespace-nowrap"
       >
         {children}
       </motion.span>

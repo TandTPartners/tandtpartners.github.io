@@ -126,7 +126,7 @@ export default function PinnedServices() {
                 </div>
               </div>
 
-              <span className="mono absolute bottom-10 right-6 hidden text-[10px] uppercase tracking-[0.2em] text-neutral-600 md:block md:right-10">
+              <span className="mono absolute bottom-10 right-6 hidden text-[10px] uppercase tracking-[0.2em] text-neutral-500 md:block md:right-10">
                 / {String(i + 1).padStart(2, '0')} — {String(services.length).padStart(2, '0')}
               </span>
             </div>

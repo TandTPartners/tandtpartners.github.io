@@ -37,7 +37,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-10 md:flex lg:gap-12">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
@@ -45,12 +45,12 @@ export default function Navbar() {
               end={link.to === '/'}
               className={({ isActive }) =>
                 clsx(
-                  'mono flex items-baseline gap-2 text-xs uppercase tracking-[0.16em] transition-colors duration-300',
-                  isActive ? 'text-white' : 'text-neutral-500 hover:text-white'
+                  'mono flex items-baseline gap-3 text-xs uppercase tracking-[0.16em] transition-colors duration-300',
+                  isActive ? 'text-white' : 'text-neutral-400 hover:text-white'
                 )
               }
             >
-              <span className="text-[10px] text-neutral-600">{link.num}</span>
+              <span className="text-[10px] text-neutral-500">{link.num}</span>
               <span>{link.label}</span>
             </NavLink>
           ))}
@@ -97,7 +97,7 @@ export default function Navbar() {
                   }
                 >
                   <span className="flex items-baseline gap-3">
-                    <span className="mono text-[10px] text-neutral-600">{link.num}</span>
+                    <span className="mono text-[10px] text-neutral-500">{link.num}</span>
                     <span className="display-md">{link.label}</span>
                   </span>
                   <ArrowUpRight size={18} />
