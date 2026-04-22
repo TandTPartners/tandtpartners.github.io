@@ -1,42 +1,18 @@
-import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 
 import Section from '../components/ui/Section'
 import Marquee from '../components/ui/Marquee'
 import MetaBar from '../components/ui/MetaBar'
 import Reveal from '../components/ui/Reveal'
-import ServiceList, { ServiceItem } from '../components/ui/ServiceList'
 import NumberedRowList from '../components/ui/NumberedRow'
 import Stat from '../components/ui/Stat'
-
-const services: ServiceItem[] = [
-  {
-    num: '01',
-    title: 'Website Creation',
-    summary:
-      'Premium, conversion-focused websites built on a strict typographic grid, engineered for performance, and structured around your business narrative.',
-    href: '/website-creation',
-    tags: ['Design', 'React', 'Performance'],
-  },
-  {
-    num: '02',
-    title: 'AI SEO Optimization',
-    summary:
-      'A technical and content methodology that makes your brand discoverable, understood, and cited by AI search platforms — from crawler access to citation monitoring.',
-    href: '/ai-seo-optimization',
-    tags: ['Audit', 'Schema', 'Monitoring'],
-  },
-  {
-    num: '03',
-    title: 'Project Management',
-    summary:
-      'Execution operating systems that transform strategic ambition into controlled, measurable delivery across teams, timelines, and stakeholders.',
-    href: '/project-management-consulting',
-    tags: ['Operations', 'Delivery', 'Governance'],
-  },
-]
+import PinnedServices from '../components/ui/PinnedServices'
+import MagneticButton from '../components/ui/MagneticButton'
+import { SplitLine } from '../components/ui/TextReveal'
+import SEO from '../components/system/SEO'
+import { organizationJsonLd, websiteJsonLd } from '../components/system/seoHelpers'
 
 const approach = [
   {
@@ -81,24 +57,32 @@ export default function HomePage() {
 
   return (
     <>
+      <SEO
+        title="Digital systems, built with purpose"
+        description="T&T Partners — premium website creation, AI SEO optimization, and project management consulting for businesses that take execution seriously."
+        path="/"
+        jsonLd={[organizationJsonLd, websiteJsonLd()]}
+      />
+
       {/* HERO */}
-      <section ref={heroRef} className="relative pt-24 md:pt-32">
+      <section ref={heroRef} className="relative pt-12 md:pt-32">
         <div className="container-swiss">
           <div className="flex items-center justify-between pb-10">
             <div className="mono text-[10px] uppercase tracking-[0.22em] text-neutral-500">
               /Index · 00
             </div>
             <div className="mono text-[10px] uppercase tracking-[0.22em] text-neutral-500">
-              Toronto · Est. 2024
+              New York · Est. 2026
             </div>
           </div>
 
           <motion.div style={{ y: heroY, opacity: heroOpacity }}>
             <h1 className="display-xl max-w-[14ch] text-white">
-              Digital systems,
-              <br />
-              <span className="italic font-light text-neutral-500">built with </span>
-              purpose.
+              <SplitLine>Digital systems,</SplitLine>
+              <SplitLine delay={0.08}>
+                <span className="italic font-light text-neutral-500">built with </span>
+                purpose.
+              </SplitLine>
             </h1>
 
             <div className="mt-16 grid gap-10 md:grid-cols-12 md:gap-8">
@@ -109,25 +93,29 @@ export default function HomePage() {
                   seriously.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  <Link to="/contact" className="btn-primary">
+                  <MagneticButton to="/contact">
                     Start a project <ArrowUpRight size={14} />
-                  </Link>
-                  <Link to="/website-creation" className="btn-ghost">
+                  </MagneticButton>
+                  <MagneticButton to="/website-creation" variant="ghost">
                     View services
-                  </Link>
+                  </MagneticButton>
                 </div>
               </div>
             </div>
           </motion.div>
 
           <div className="mt-24 grid grid-cols-3 gap-4 border-t border-white/10 pt-6 md:mt-32">
-            {services.map((s) => (
+            {[
+              { num: '01', label: 'Website Creation' },
+              { num: '02', label: 'AI SEO Optimization' },
+              { num: '03', label: 'Project Management' },
+            ].map((s) => (
               <div key={s.num} className="flex items-baseline gap-2">
                 <span className="mono text-[10px] uppercase tracking-[0.2em] text-neutral-500">
                   {s.num}
                 </span>
                 <span className="mono text-[10px] uppercase tracking-[0.2em] text-neutral-400">
-                  {s.title}
+                  {s.label}
                 </span>
               </div>
             ))}
@@ -162,16 +150,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* SERVICES */}
-      <Section className="pt-0">
-        <MetaBar index="02" label="Services" right="03 — Practices" />
-        <div className="mt-12">
-          <ServiceList items={services} />
-        </div>
-      </Section>
+      {/* PINNED SERVICES GALLERY */}
+      <PinnedServices />
 
       {/* APPROACH */}
-      <Section className="pt-0">
+      <Section>
         <MetaBar index="03" label="Approach" right="04 — Phases" />
         <div className="mt-12 grid gap-10 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-4">
@@ -222,12 +205,12 @@ export default function HomePage() {
             </h2>
           </Reveal>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-primary">
+            <MagneticButton to="/contact">
               Book a strategy call <ArrowUpRight size={14} />
-            </Link>
-            <Link to="/ai-seo-optimization" className="btn-ghost">
+            </MagneticButton>
+            <MagneticButton to="/ai-seo-optimization" variant="ghost">
               See AI SEO method
-            </Link>
+            </MagneticButton>
           </div>
         </div>
       </Section>

@@ -50,8 +50,8 @@ export default function Footer() {
           <div className="md:col-span-3">
             <p className="eyebrow">Contact</p>
             <ul className="mt-6 space-y-3 text-sm text-neutral-400">
-              <li>hello@tandtpartners.com</li>
-              <li>Toronto, Canada</li>
+              <li>tahir@tandtpartners.com</li>
+              <li>New York, USA</li>
               <li className="mono text-xs uppercase text-neutral-600">
                 Est. 2024
               </li>

@@ -4,6 +4,9 @@ import { ArrowUpRight } from 'lucide-react'
 import Section from '../components/ui/Section'
 import MetaBar from '../components/ui/MetaBar'
 import Reveal from '../components/ui/Reveal'
+import MagneticButton from '../components/ui/MagneticButton'
+import { SplitLine } from '../components/ui/TextReveal'
+import SEO from '../components/system/SEO'
 
 const serviceOptions = [
   { value: 'website', label: 'Website Creation', num: '01' },
@@ -26,8 +29,14 @@ export default function ContactPage() {
 
   return (
     <>
+      <SEO
+        title="Contact"
+        description="Tell us what you need built. We respond within 1 business day with a clear, actionable next step — no generic sales deck."
+        path="/contact"
+      />
+
       {/* HERO */}
-      <section className="pt-24 md:pt-32">
+      <section className="pt-12 md:pt-32">
         <div className="container-swiss">
           <div className="flex items-center justify-between pb-10">
             <span className="mono text-[10px] uppercase tracking-[0.22em] text-neutral-500">
@@ -38,10 +47,11 @@ export default function ContactPage() {
             </span>
           </div>
           <h1 className="display-xl max-w-[16ch] text-white">
-            Tell us
-            <br />
-            <span className="italic font-light text-neutral-500">what you </span>
-            need built.
+            <SplitLine>Tell us</SplitLine>
+            <SplitLine delay={0.08}>
+              <span className="italic font-light text-neutral-500">what you </span>
+              need built.
+            </SplitLine>
           </h1>
           <div className="mt-16 grid gap-10 md:grid-cols-12 md:gap-8">
             <div className="md:col-span-5 md:col-start-7">
@@ -65,7 +75,9 @@ export default function ContactPage() {
               <h2 className="display-md mt-6 max-w-[20ch] text-white">
                 Brief received.
                 <br />
-                <span className="italic font-light text-neutral-500">We will reply directly.</span>
+                <span className="italic font-light text-neutral-500">
+                  We will reply directly.
+                </span>
               </h2>
               <p className="mt-6 max-w-lg text-neutral-400">
                 Expect a response within one business day with next-step recommendations
@@ -87,6 +99,7 @@ export default function ContactPage() {
                     key={option.value}
                     type="button"
                     onClick={() => setService(option.value)}
+                    data-cursor="Select"
                     className={`flex items-baseline gap-3 border-b border-white/10 py-5 text-left transition-colors duration-300 md:border-r md:last:border-r-0 md:px-4 ${
                       service === option.value
                         ? 'bg-[var(--accent)]/10 text-white'
@@ -140,6 +153,7 @@ export default function ContactPage() {
                     key={option}
                     type="button"
                     onClick={() => setBudget(option)}
+                    data-cursor="Select"
                     className={`mono rounded-full border px-4 py-2 text-[10px] uppercase tracking-[0.18em] transition-colors ${
                       budget === option
                         ? 'border-white bg-white text-black'
@@ -171,9 +185,9 @@ export default function ContactPage() {
               <p className="mono text-[10px] uppercase tracking-[0.18em] text-neutral-500">
                 No sales pitch · Direct reply · 1 business day
               </p>
-              <button type="submit" className="btn-primary">
+              <MagneticButton type="submit">
                 Submit brief <ArrowUpRight size={14} />
-              </button>
+              </MagneticButton>
             </div>
           </form>
         )}
@@ -189,7 +203,7 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="eyebrow">Location</p>
-            <p className="mt-3 text-lg text-white">Toronto, Canada</p>
+            <p className="mt-3 text-lg text-white">New York, USA</p>
           </div>
           <div>
             <p className="eyebrow">Availability</p>
