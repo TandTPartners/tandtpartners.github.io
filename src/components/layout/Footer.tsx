@@ -53,7 +53,7 @@ export default function Footer() {
               <li>tahir@tandtpartners.com</li>
               <li>New York, USA</li>
               <li className="mono text-xs uppercase text-neutral-500">
-                Est. 2024
+                Est. 2026
               </li>
             </ul>
           </div>
