@@ -41,7 +41,7 @@ const services: PinnedService[] = [
   {
     num: '03',
     title: 'Project Management',
-    kicker: 'Service · Delivery',
+    kicker: 'Service · PM Consulting',
     description:
       'Operating systems that turn strategy into predictable execution — governance, cadence, risk, and reporting that leadership can trust.',
     bullets: ['Roadmap design', 'Operating cadence', 'Execution reporting'],

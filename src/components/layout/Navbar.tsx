@@ -8,7 +8,7 @@ const navLinks = [
   { to: '/', label: 'Index', num: '00' },
   { to: '/website-creation', label: 'Websites', num: '01' },
   { to: '/ai-seo-optimization', label: 'AI SEO', num: '02' },
-  { to: '/project-management-consulting', label: 'Delivery', num: '03' },
+  { to: '/project-management-consulting', label: 'PM Consulting', num: '03' },
   { to: '/contact', label: 'Contact', num: '04' },
 ]
 

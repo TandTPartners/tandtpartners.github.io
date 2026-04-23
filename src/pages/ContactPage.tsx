@@ -199,7 +199,7 @@ export default function ContactPage() {
         <div className="mt-12 grid gap-10 md:grid-cols-3">
           <div>
             <p className="eyebrow">Email</p>
-            <p className="mt-3 text-lg text-white">hello@tandtpartners.com</p>
+            <p className="mt-3 text-lg text-white">tahir@tandtpartners.com</p>
           </div>
           <div>
             <p className="eyebrow">Location</p>

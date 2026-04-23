@@ -194,20 +194,16 @@ body {
   }
 }
 
-/* Hide native cursor on fine-pointer devices only, custom cursor takes over */
+/* Hide native cursor on fine-pointer devices only, custom cursor takes over.
+   Uses a transparent 1x1 SVG as the primary cursor with `none` as fallback —
+   this is the bulletproof combo that forces the OS to hide its pointer even
+   after window focus changes (otherwise `cursor: none` alone can fail to
+   re-apply when the mouse re-enters the viewport on macOS/Safari). */
 @media (hover: hover) and (pointer: fine) {
-  html,
-  body {
-    cursor: none;
-  }
-  a,
-  button,
-  [role='button'],
-  input,
-  textarea,
-  select,
-  [data-cursor] {
-    cursor: none;
+  *,
+  *::before,
+  *::after {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1' viewBox='0 0 1 1'></svg>") 0 0, none !important;
   }
 }
 
