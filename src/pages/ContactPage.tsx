@@ -8,8 +8,8 @@ import MagneticButton from '../components/ui/MagneticButton'
 import { SplitLine } from '../components/ui/TextReveal'
 import SEO from '../components/system/SEO'
 
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/tahir@tandtpartners.com'
-const MAILTO_TO = 'tahir@tandtpartners.com'
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/support@tandtpartners.com'
+const MAILTO_TO = 'support@tandtpartners.com'
 
 const serviceOptions = [
   { value: 'website', label: 'Website Creation', num: '01' },
