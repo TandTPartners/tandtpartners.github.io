@@ -64,7 +64,7 @@ interface SplitLineProps {
  */
 export function SplitLine({ children, className, delay = 0 }: SplitLineProps) {
   return (
-    <span className={clsx('block overflow-hidden', className)}>
+    <span className={clsx('block overflow-hidden pb-[0.12em]', className)}>
       <motion.span
         initial={{ y: '110%' }}
         animate={{ y: '0%' }}
