@@ -88,9 +88,9 @@ export default function HomePage() {
             <div className="mt-16 grid gap-10 md:grid-cols-12 md:gap-8">
               <div className="md:col-span-5 md:col-start-7">
                 <p className="text-lg leading-relaxed text-neutral-300 md:text-xl">
-                  T&T Partners designs premium websites, engineers AI search visibility,
-                  and installs project delivery systems for companies that take execution
-                  seriously.
+                  T&T Partners builds premium websites, engineers AI SEO strategies,
+                  and offers project management consulting for companies ready to grow 
+                  with precision.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <MagneticButton to="/contact">
